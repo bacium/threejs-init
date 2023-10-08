@@ -11,7 +11,7 @@ const camera = new THREE.PerspectiveCamera(
 )
 
 // 创建渲染器
-const renderer = new THREE.WebGL1Renderer()
+const renderer = new THREE.WebGLRenderer()
 // 渲染器尺寸
 renderer.setSize(window.innerWidth, window.innerHeight)
 // 把创建的渲染器放置到页面上渲染出来
@@ -20,7 +20,7 @@ document.body.appendChild(renderer.domElement)
 // 创建几何体
 const geometry = new THREE.BoxGeometry(1, 1, 1)
 // 创建材质
-const material = new THREE.Material({ color: 0x00ff00 })
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
 // 创建网格
 const cube = new THREE.Mesh(geometry, material)
 
@@ -32,7 +32,7 @@ camera.lookAt(0, 0, 0)
 
 // 持续变化-定义一个渲染函数
 function animate() {
-  // requestAnimationFrame(animate)
+  requestAnimationFrame(animate)
   // 旋转
   cube.rotation.x += 0.01
   cube.rotation.y += 0.01
